@@ -1,0 +1,21 @@
+# Performance optimization requirements for BillGenerator Optimized
+# Core performance monitoring
+psutil>=5.9.0
+pandas>=1.5.0
+
+# Optional Redis caching support
+redis>=4.5.0
+
+# Testing requirements
+pytest>=7.0.0
+pytest-benchmark>=4.0.0
+
+# For memory profiling (optional)
+memory-profiler>=0.60.0
+pympler>=0.9
+
+# Async support (optional)
+asyncio-mqtt>=0.11.0
+
+# Concurrent processing
+concurrent-futures>=3.1.1

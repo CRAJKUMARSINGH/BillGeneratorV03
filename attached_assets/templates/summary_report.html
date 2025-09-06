@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Billing Summary Report</title>
+    <link rel="stylesheet" href="../styles/pdf.css">
+    <style>
+        .header-section {
+            text-align: center;
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            border-bottom: 3pt solid #2E7D32;
+        }
+        
+        .project-header {
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            color: white;
+            padding: 1.5em;
+            border-radius: 8px;
+            margin-bottom: 2em;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2em;
+            margin: 2em 0;
+        }
+        
+        .highlight-box {
+            background: #F8F9FA;
+            border-left: 4pt solid #2E7D32;
+            padding: 1em;
+            margin: 1em 0;
+        }
+        
+        @media print {
+            .summary-grid {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="document-header">
+        <img src="../images/government_logo.png" alt="Government Logo" class="government-logo" onerror="this.style.display='none'">
+        <div class="department-name">{{ department_name | default("Infrastructure Development Department") }}</div>
+        <div class="document-title">INFRASTRUCTURE BILLING SUMMARY REPORT</div>
+        <div class="document-subtitle">{{ document_type | default("Bill of Quantities Summary") }}</div>
+    </div>
+
+    <div class="project-header">
+        <h1>{{ project_name | default("Infrastructure Project") }}</h1>
+        <p><strong>Contractor:</strong> {{ contractor_name | default("N/A") }}</p>
+        <p><strong>Agreement No:</strong> {{ agreement_no | default("N/A") }}</p>
+        <p><strong>Location:</strong> {{ location | default("N/A") }}</p>
+    </div>
+
+    <div class="date-ref">
+        <div class="date"><strong>Date:</strong> {{ generation_date | default("Today's Date") }}</div>
+        <div class="reference"><strong>Reference:</strong> {{ reference_no | default("Auto-Generated") }}</div>
+    </div>
+
+    <div class="project-info">
+        <h2>Project Information</h2>
+        <table class="project-info-table">
+            <tr>
+                <td>Project Name</td>
+                <td>{{ project_name | default("N/A") }}</td>
+            </tr>
+            <tr>
+                <td>Contractor</td>
+                <td>{{ contractor_name | default("N/A") }}</td>
+            </tr>
+            <tr>
+                <td>Agreement Number</td>
+                <td>{{ agreement_no | default("N/A") }}</td>
+            </tr>
+            <tr>
+                <td>Work Order Number</td>
+                <td>{{ work_order_no | default("N/A") }}</td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td>{{ location | default("N/A") }}</td>
+            </tr>
+            <tr>
+                <td>Division</td>
+                <td>{{ division | default("N/A") }}</td>
+            </tr>
+            <tr>
+                <td>Estimated Cost</td>
+                <td class="currency">{{ estimated_cost | format_currency | default("N/A") }}</td>
+            </tr>
+            <tr>
+                <td>Start Date</td>
+                <td>{{ start_date | default("N/A") }}</td>
+            </tr>
+            <tr>
+                <td>Completion Date</td>
+                <td>{{ completion_date | default("N/A") }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="financial-summary">
+        <h2>Financial Summary</h2>
+        
+        <div class="summary-grid">
+            <div>
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Work Order Summary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left">Total Items</td>
+                            <td class="text-right">{{ work_order_items_count | default(0) }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Gross Amount</td>
+                            <td class="text-right currency">{{ work_order_gross_amount | format_currency | default("₹0.00") }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">GST ({{ gst_rate | default(18) }}%)</td>
+                            <td class="text-right currency">{{ work_order_gst_amount | format_currency | default("₹0.00") }}</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td class="text-left"><strong>Total Amount</strong></td>
+                            <td class="text-right currency"><strong>{{ work_order_total_amount | format_currency | default("₹0.00") }}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div>
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Bill Quantity Summary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left">Total Items</td>
+                            <td class="text-right">{{ bill_quantity_items_count | default(0) }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">Gross Amount</td>
+                            <td class="text-right currency">{{ bill_quantity_gross_amount | format_currency | default("₹0.00") }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left">GST ({{ gst_rate | default(18) }}%)</td>
+                            <td class="text-right currency">{{ bill_quantity_gst_amount | format_currency | default("₹0.00") }}</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td class="text-left"><strong>Total Amount</strong></td>
+                            <td class="text-right currency"><strong>{{ bill_quantity_total_amount | format_currency | default("₹0.00") }}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        {% if extra_items and extra_items|length > 0 %}
+        <table class="summary-table">
+            <thead>
+                <tr>
+                    <th colspan="2">Extra Items Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-left">Total Items</td>
+                    <td class="text-right">{{ extra_items_count | default(0) }}</td>
+                </tr>
+                <tr>
+                    <td class="text-left">Gross Amount</td>
+                    <td class="text-right currency">{{ extra_items_gross_amount | format_currency | default("₹0.00") }}</td>
+                </tr>
+                <tr>
+                    <td class="text-left">GST ({{ gst_rate | default(18) }}%)</td>
+                    <td class="text-right currency">{{ extra_items_gst_amount | format_currency | default("₹0.00") }}</td>
+                </tr>
+                <tr class="total-row">
+                    <td class="text-left"><strong>Total Amount</strong></td>
+                    <td class="text-right currency"><strong>{{ extra_items_total_amount | format_currency | default("₹0.00") }}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        {% endif %}
+
+        <div class="highlight-box">
+            <h3>Overall Project Total</h3>
+            <table class="summary-table">
+                <tr class="total-row">
+                    <td class="text-left"><strong>Grand Total (Including GST)</strong></td>
+                    <td class="text-right currency"><strong>{{ grand_total_amount | format_currency | default("₹0.00") }}</strong></td>
+                </tr>
+            </table>
+            <div class="amount-in-words">
+                <strong>Amount in Words:</strong> {{ grand_total_in_words | default("Zero Rupees Only") }}
+            </div>
+        </div>
+    </div>
+
+    {% if work_order_items and work_order_items|length > 0 %}
+    <div class="page-break-before">
+        <h2>Work Order Items Summary</h2>
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th class="serial-col">S.No.</th>
+                    <th class="description-col">Description</th>
+                    <th class="quantity-col">Quantity</th>
+                    <th class="unit-col">Unit</th>
+                    <th class="rate-col">Rate</th>
+                    <th class="amount-col">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in work_order_items %}
+                <tr>
+                    <td class="serial-col">{{ loop.index }}</td>
+                    <td class="description-col">{{ item.description | default("N/A") }}</td>
+                    <td class="quantity-col">{{ item.quantity | default("0") }}</td>
+                    <td class="unit-col">{{ item.unit | default("N/A") }}</td>
+                    <td class="rate-col currency">{{ item.rate | format_currency | default("₹0.00") }}</td>
+                    <td class="amount-col currency">{{ item.amount | format_currency | default("₹0.00") }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+    {% if bill_quantity_items and bill_quantity_items|length > 0 %}
+    <div class="page-break-before">
+        <h2>Bill Quantity Items Summary</h2>
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th class="serial-col">S.No.</th>
+                    <th class="description-col">Description</th>
+                    <th class="quantity-col">Quantity</th>
+                    <th class="unit-col">Unit</th>
+                    <th class="rate-col">Rate</th>
+                    <th class="amount-col">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in bill_quantity_items %}
+                <tr>
+                    <td class="serial-col">{{ loop.index }}</td>
+                    <td class="description-col">{{ item.description | default("N/A") }}</td>
+                    <td class="quantity-col">{{ item.quantity | default("0") }}</td>
+                    <td class="unit-col">{{ item.unit | default("N/A") }}</td>
+                    <td class="rate-col currency">{{ item.rate | format_currency | default("₹0.00") }}</td>
+                    <td class="amount-col currency">{{ item.amount | format_currency | default("₹0.00") }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+    {% if extra_items and extra_items|length > 0 %}
+    <div class="page-break-before">
+        <h2>Extra Items Summary</h2>
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th class="serial-col">S.No.</th>
+                    <th class="description-col">Description</th>
+                    <th class="quantity-col">Quantity</th>
+                    <th class="unit-col">Unit</th>
+                    <th class="rate-col">Rate</th>
+                    <th class="amount-col">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in extra_items %}
+                <tr>
+                    <td class="serial-col">{{ loop.index }}</td>
+                    <td class="description-col">{{ item.description | default("N/A") }}</td>
+                    <td class="quantity-col">{{ item.quantity | default("0") }}</td>
+                    <td class="unit-col">{{ item.unit | default("N/A") }}</td>
+                    <td class="rate-col currency">{{ item.rate | format_currency | default("₹0.00") }}</td>
+                    <td class="amount-col currency">{{ item.amount | format_currency | default("₹0.00") }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+    <div class="certificate">
+        <div class="certificate-title">CERTIFICATION</div>
+        <div class="certificate-content">
+            <p>I hereby certify that:</p>
+            <ol>
+                <li>The work described in this bill has been executed in accordance with the specifications and drawings.</li>
+                <li>The rates charged are in accordance with the approved schedule of rates and contract terms.</li>
+                <li>All measurements have been verified and found correct.</li>
+                <li>The total amount claimed is {{ grand_total_amount | format_currency | default("₹0.00") }} ({{ grand_total_in_words | default("Zero Rupees Only") }}).</li>
+                <li>All statutory compliance and quality standards have been maintained.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="signatures">
+        <div class="signature-row">
+            <div class="signature-box">
+                <div class="signature-label">Contractor</div>
+                <p>{{ contractor_name | default("Contractor Name") }}</p>
+            </div>
+            <div class="signature-box">
+                <div class="signature-label">Engineer-in-Charge</div>
+                <p>{{ engineer_name | default("Engineer Name") }}</p>
+            </div>
+            <div class="signature-box">
+                <div class="signature-label">Executive Engineer</div>
+                <p>{{ executive_engineer | default("Executive Engineer") }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="document-footer">
+        <p>Generated on {{ generation_date | default("Current Date") }} | BillGenerator Optimized v1.0 | {{ reference_no | default("Document Reference") }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+% BillGenerator Optimized - First Page Summary Template
+% Professional LaTeX template for infrastructure billing documents
+\documentclass[a4paper,11pt]{article}
+
+% Required packages
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{eurosym}
+\usepackage{enumitem}
+
+% Page setup
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=3.5cm,
+    headheight=1.5cm,
+    footskip=1.5cm
+}
+
+% Colors
+\definecolor{primarygreen}{RGB}{46,125,50}
+\definecolor{secondarygreen}{RGB}{76,175,80}
+\definecolor{lightgreen}{RGB}{129,199,132}
+\definecolor{darkgray}{RGB}{51,51,51}
+\definecolor{lightgray}{RGB}{245,245,245}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\textcolor{primarygreen}{\textbf{Infrastructure Billing Document}}}
+\fancyfoot[C]{\textcolor{darkgray}{Page \thepage\ | Generated on {{ generation_date | latex_escape }}}}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{primarygreen}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{lightgreen}\leaders\hrule height \footrulewidth\hfill}}
+
+% Custom commands
+\newcommand{\rupee}{\textbf{₹}}
+\newcommand{\primaryheader}[1]{\textcolor{primarygreen}{\textbf{\large #1}}}
+\newcommand{\secondaryheader}[1]{\textcolor{secondarygreen}{\textbf{#1}}}
+
+\begin{document}
+
+% Title Page Header
+\begin{center}
+    {\Huge \textcolor{primarygreen}{\textbf{{{ department_name | default("Infrastructure Development Department") | latex_escape }}}}}
+    
+    \vspace{0.5cm}
+    {\Large \textcolor{darkgray}{{{ document_type | default("Bill of Quantities Summary") | latex_escape }}}}
+    
+    \vspace{1cm}
+    \rule{\textwidth}{2pt}
+    \vspace{0.5cm}
+    
+    {\LARGE \textbf{{{ project_name | default("Infrastructure Project") | latex_escape }}}}
+    
+    \vspace{0.3cm}
+    {\large \textcolor{darkgray}{Summary Report}}
+\end{center}
+
+\vspace{1cm}
+
+% Project Information Section
+\primaryheader{Project Information}
+\vspace{0.3cm}
+
+\begin{longtable}{|p{5cm}|p{8cm}|}
+\hline
+\rowcolor{lightgray}
+\textbf{Field} & \textbf{Details} \\
+\hline
+Project Name & {{ project_name | default("N/A") | latex_escape }} \\
+\hline
+Contractor & {{ contractor_name | default("N/A") | latex_escape }} \\
+\hline
+Agreement Number & {{ agreement_no | default("N/A") | latex_escape }} \\
+\hline
+Work Order Number & {{ work_order_no | default("N/A") | latex_escape }} \\
+\hline
+Location & {{ location | default("N/A") | latex_escape }} \\
+\hline
+Division & {{ division | default("N/A") | latex_escape }} \\
+\hline
+Estimated Cost & \rupee{{ estimated_cost | format_currency | default("0.00") | latex_escape }} \\
+\hline
+Start Date & {{ start_date | default("N/A") | latex_escape }} \\
+\hline
+Completion Date & {{ completion_date | default("N/A") | latex_escape }} \\
+\hline
+Generation Date & {{ generation_date | default("Current Date") | latex_escape }} \\
+\hline
+Reference Number & {{ reference_no | default("Auto-Generated") | latex_escape }} \\
+\hline
+\end{longtable}
+
+\vspace{1cm}
+
+% Financial Summary Section
+\primaryheader{Financial Summary}
+\vspace{0.3cm}
+
+% Work Order Summary
+\secondaryheader{Work Order Summary}
+\vspace{0.2cm}
+
+\begin{longtable}{|p{6cm}|p{4cm}|}
+\hline
+\rowcolor{primarygreen}
+\textcolor{white}{\textbf{Description}} & \textcolor{white}{\textbf{Amount}} \\
+\hline
+Total Items & {{ work_order_items_count | default("0") }} items \\
+\hline
+Gross Amount & \rupee{{ work_order_gross_amount | format_currency | default("0.00") | latex_escape }} \\
+\hline
+GST ({{ gst_rate | default("18") }}\%) & \rupee{{ work_order_gst_amount | format_currency | default("0.00") | latex_escape }} \\
+\hline
+\rowcolor{lightgreen}
+\textbf{Total Amount} & \textbf{\rupee{{ work_order_total_amount | format_currency | default("0.00") | latex_escape }}} \\
+\hline
+\end{longtable}
+
+\vspace{0.5cm}
+
+% Bill Quantity Summary
+\secondaryheader{Bill Quantity Summary}
+\vspace{0.2cm}
+
+\begin{longtable}{|p{6cm}|p{4cm}|}
+\hline
+\rowcolor{primarygreen}
+\textcolor{white}{\textbf{Description}} & \textcolor{white}{\textbf{Amount}} \\
+\hline
+Total Items & {{ bill_quantity_items_count | default("0") }} items \\
+\hline
+Gross Amount & \rupee{{ bill_quantity_gross_amount | format_currency | default("0.00") | latex_escape }} \\
+\hline
+GST ({{ gst_rate | default("18") }}\%) & \rupee{{ bill_quantity_gst_amount | format_currency | default("0.00") | latex_escape }} \\
+\hline
+\rowcolor{lightgreen}
+\textbf{Total Amount} & \textbf{\rupee{{ bill_quantity_total_amount | format_currency | default("0.00") | latex_escape }}} \\
+\hline
+\end{longtable}
+
+{% if extra_items and extra_items|length > 0 %}
+\vspace{0.5cm}
+
+% Extra Items Summary
+\secondaryheader{Extra Items Summary}
+\vspace{0.2cm}
+
+\begin{longtable}{|p{6cm}|p{4cm}|}
+\hline
+\rowcolor{primarygreen}
+\textcolor{white}{\textbf{Description}} & \textcolor{white}{\textbf{Amount}} \\
+\hline
+Total Items & {{ extra_items_count | default("0") }} items \\
+\hline
+Gross Amount & \rupee{{ extra_items_gross_amount | format_currency | default("0.00") | latex_escape }} \\
+\hline
+GST ({{ gst_rate | default("18") }}\%) & \rupee{{ extra_items_gst_amount | format_currency | default("0.00") | latex_escape }} \\
+\hline
+\rowcolor{lightgreen}
+\textbf{Total Amount} & \textbf{\rupee{{ extra_items_total_amount | format_currency | default("0.00") | latex_escape }}} \\
+\hline
+\end{longtable}
+{% endif %}
+
+\vspace{1cm}
+
+% Overall Total
+\begin{center}
+\fbox{\begin{minipage}{0.8\textwidth}
+\begin{center}
+\primaryheader{GRAND TOTAL (Including GST)}
+\vspace{0.5cm}
+
+{\Huge \textbf{\rupee{{ grand_total_amount | format_currency | default("0.00") | latex_escape }}}}
+
+\vspace{0.5cm}
+\textit{Amount in Words:} {{ grand_total_in_words | default("Zero Rupees Only") | latex_escape }}
+\end{center}
+\end{minipage}}
+\end{center}
+
+\vspace{1.5cm}
+
+% Certification Section
+\primaryheader{Certification}
+\vspace{0.3cm}
+
+I hereby certify that:
+\begin{enumerate}[leftmargin=0.8cm]
+    \item The work described in this bill has been executed in accordance with the specifications and drawings.
+    \item The rates charged are in accordance with the approved schedule of rates and contract terms.
+    \item All measurements have been verified and found correct.
+    \item The total amount claimed is \rupee{{ grand_total_amount | format_currency | default("0.00") | latex_escape }} ({{ grand_total_in_words | default("Zero Rupees Only") | latex_escape }}).
+    \item All statutory compliance and quality standards have been maintained.
+\end{enumerate}
+
+\vspace{2cm}
+
+% Signatures Section
+\begin{center}
+\begin{tabular}{p{4cm} p{4cm} p{4cm}}
+\rule{3.5cm}{0.5pt} & \rule{3.5cm}{0.5pt} & \rule{3.5cm}{0.5pt} \\
+\textbf{Contractor} & \textbf{Engineer-in-Charge} & \textbf{Executive Engineer} \\
+{{ contractor_name | default("Contractor Name") | latex_escape }} & {{ engineer_name | default("Engineer Name") | latex_escape }} & {{ executive_engineer | default("Executive Engineer") | latex_escape }} \\
+\end{tabular}
+\end{center}
+
+\vspace{1cm}
+
+% Footer Information
+\begin{center}
+\textcolor{darkgray}{\small Generated by BillGenerator Optimized v1.0 | {{ reference_no | default("Document Reference") | latex_escape }}}
+\end{center}
+
+\end{document}

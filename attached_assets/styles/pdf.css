@@ -1,0 +1,508 @@
+/* BillGenerator Optimized - PDF Styles */
+/* Professional styles for PDF document generation */
+
+/* Page Setup */
+@page {
+    size: A4;
+    margin: 2cm 2cm 3cm 2cm;
+    @top-center {
+        content: "Infrastructure Billing Document";
+        font-size: 10pt;
+        color: #666666;
+    }
+    @bottom-center {
+        content: "Page " counter(page) " of " counter(pages);
+        font-size: 10pt;
+        color: #666666;
+    }
+}
+
+/* Root Variables for PDF */
+:root {
+    --pdf-primary: #2E7D32;
+    --pdf-secondary: #4CAF50;
+    --pdf-text: #333333;
+    --pdf-light-text: #666666;
+    --pdf-border: #CCCCCC;
+    --pdf-background: #FFFFFF;
+    --pdf-light-bg: #F8F9FA;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    line-height: 1.4;
+    color: var(--pdf-text);
+    margin: 0;
+    padding: 0;
+    background: var(--pdf-background);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', sans-serif;
+    color: var(--pdf-primary);
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    page-break-after: avoid;
+}
+
+h1 {
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2pt solid var(--pdf-primary);
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+h4 {
+    font-size: 11pt;
+    font-weight: bold;
+    margin-top: 0.8em;
+    margin-bottom: 0.3em;
+}
+
+p {
+    margin: 0.5em 0;
+    text-align: justify;
+    orphans: 2;
+    widows: 2;
+}
+
+/* Header Section */
+.document-header {
+    text-align: center;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+    border-bottom: 2pt solid var(--pdf-primary);
+}
+
+.government-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.department-name {
+    font-size: 14pt;
+    font-weight: bold;
+    color: var(--pdf-primary);
+    margin-bottom: 0.5em;
+}
+
+.document-title {
+    font-size: 16pt;
+    font-weight: bold;
+    color: var(--pdf-text);
+    margin-bottom: 0.5em;
+}
+
+.document-subtitle {
+    font-size: 12pt;
+    color: var(--pdf-light-text);
+    font-style: italic;
+}
+
+/* Project Information Section */
+.project-info {
+    margin: 2em 0;
+    page-break-inside: avoid;
+}
+
+.project-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+.project-info-table td {
+    padding: 0.3em 0.5em;
+    border: 1pt solid var(--pdf-border);
+    vertical-align: top;
+}
+
+.project-info-table td:first-child {
+    font-weight: bold;
+    background-color: var(--pdf-light-bg);
+    width: 30%;
+}
+
+/* Financial Summary */
+.financial-summary {
+    margin: 2em 0;
+    page-break-inside: avoid;
+}
+
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.summary-table th {
+    background-color: var(--pdf-primary);
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+    font-weight: bold;
+    border: 1pt solid var(--pdf-primary);
+}
+
+.summary-table td {
+    padding: 0.4em 0.5em;
+    border: 1pt solid var(--pdf-border);
+    text-align: center;
+}
+
+.summary-table td.text-left {
+    text-align: left;
+}
+
+.summary-table td.text-right {
+    text-align: right;
+}
+
+.summary-table tr:nth-child(even) {
+    background-color: var(--pdf-light-bg);
+}
+
+.total-row {
+    font-weight: bold;
+    background-color: #E8F5E8 !important;
+}
+
+.total-row td {
+    border-top: 2pt solid var(--pdf-primary);
+}
+
+/* Item Details Table */
+.items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 10pt;
+}
+
+.items-table th {
+    background-color: var(--pdf-primary);
+    color: white;
+    padding: 0.5em 0.3em;
+    text-align: center;
+    font-weight: bold;
+    border: 1pt solid var(--pdf-primary);
+    font-size: 9pt;
+}
+
+.items-table td {
+    padding: 0.3em;
+    border: 1pt solid var(--pdf-border);
+    font-size: 9pt;
+    vertical-align: top;
+}
+
+.items-table .serial-col {
+    width: 5%;
+    text-align: center;
+}
+
+.items-table .description-col {
+    width: 40%;
+    text-align: left;
+}
+
+.items-table .quantity-col,
+.items-table .unit-col,
+.items-table .rate-col,
+.items-table .amount-col {
+    width: 13.75%;
+    text-align: right;
+}
+
+.items-table tr:nth-child(even) {
+    background-color: var(--pdf-light-bg);
+}
+
+/* Currency Formatting */
+.currency {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.amount-in-words {
+    font-style: italic;
+    color: var(--pdf-light-text);
+    margin: 1em 0;
+    padding: 0.5em;
+    border: 1pt solid var(--pdf-border);
+    background-color: var(--pdf-light-bg);
+}
+
+/* Signatures Section */
+.signatures {
+    margin-top: 3em;
+    page-break-inside: avoid;
+}
+
+.signature-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+}
+
+.signature-box {
+    width: 30%;
+    text-align: center;
+    border-top: 1pt solid var(--pdf-text);
+    padding-top: 0.5em;
+}
+
+.signature-label {
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+/* Certificate Sections */
+.certificate {
+    margin: 2em 0;
+    padding: 1em;
+    border: 2pt solid var(--pdf-primary);
+    page-break-inside: avoid;
+}
+
+.certificate-title {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    color: var(--pdf-primary);
+    margin-bottom: 1em;
+}
+
+.certificate-content {
+    text-align: justify;
+    line-height: 1.6;
+    margin: 1em 0;
+}
+
+/* Terms and Conditions */
+.terms-section {
+    margin: 2em 0;
+    page-break-inside: avoid;
+}
+
+.terms-list {
+    counter-reset: term-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+.terms-list li {
+    counter-increment: term-counter;
+    margin: 0.5em 0;
+    padding-left: 2em;
+    position: relative;
+}
+
+.terms-list li::before {
+    content: counter(term-counter) ".";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: var(--pdf-primary);
+}
+
+/* Page Break Controls */
+.page-break-before {
+    page-break-before: always;
+}
+
+.page-break-after {
+    page-break-after: always;
+}
+
+.no-page-break {
+    page-break-inside: avoid;
+}
+
+/* Watermark */
+.watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 72pt;
+    color: rgba(46, 125, 50, 0.1);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Footer Information */
+.document-footer {
+    position: fixed;
+    bottom: 1cm;
+    left: 2cm;
+    right: 2cm;
+    font-size: 8pt;
+    color: var(--pdf-light-text);
+    text-align: center;
+    border-top: 1pt solid var(--pdf-border);
+    padding-top: 0.5em;
+}
+
+/* Date and Reference */
+.date-ref {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+    font-size: 10pt;
+}
+
+.date-ref .date,
+.date-ref .reference {
+    font-weight: bold;
+}
+
+/* Technical Specifications Table */
+.tech-specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 10pt;
+}
+
+.tech-specs-table th {
+    background-color: var(--pdf-light-bg);
+    padding: 0.5em;
+    border: 1pt solid var(--pdf-border);
+    font-weight: bold;
+    text-align: left;
+}
+
+.tech-specs-table td {
+    padding: 0.4em 0.5em;
+    border: 1pt solid var(--pdf-border);
+    vertical-align: top;
+}
+
+/* Status Indicators */
+.status-approved {
+    color: #2E7D32;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: #FF9800;
+    font-weight: bold;
+}
+
+.status-rejected {
+    color: #F44336;
+    font-weight: bold;
+}
+
+/* Measurement Units */
+.unit {
+    font-size: 0.9em;
+    color: var(--pdf-light-text);
+    font-style: italic;
+}
+
+/* Mathematical Expressions */
+.formula {
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+    text-align: center;
+    margin: 1em 0;
+    padding: 0.5em;
+    background-color: var(--pdf-light-bg);
+    border-left: 3pt solid var(--pdf-primary);
+}
+
+/* Quality Control */
+.qc-stamp {
+    position: absolute;
+    top: 2cm;
+    right: 2cm;
+    width: 3cm;
+    height: 3cm;
+    border: 2pt solid var(--pdf-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8pt;
+    font-weight: bold;
+    color: var(--pdf-primary);
+    background-color: var(--pdf-background);
+}
+
+/* Annexure and Appendix */
+.annexure {
+    margin: 2em 0;
+    page-break-before: always;
+}
+
+.annexure-title {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    color: var(--pdf-primary);
+    margin-bottom: 2em;
+}
+
+/* Error Prevention */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+/* Print Optimization */
+@media print {
+    body {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+    
+    .no-print {
+        display: none !important;
+    }
+    
+    a {
+        color: var(--pdf-text) !important;
+        text-decoration: none;
+    }
+}
+
+/* Accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
