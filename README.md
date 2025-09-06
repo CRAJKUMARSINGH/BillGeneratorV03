@@ -30,7 +30,7 @@ Your Excel file should contain the following sheets:
 ### System Requirements
 - Python 3.8+
 - Streamlit 1.28+
-- See `requirements_cloud.txt` for complete dependencies
+- See `requirements.txt` for complete dependencies
 
 ## 🛠️ Local Installation
 
@@ -42,7 +42,7 @@ Your Excel file should contain the following sheets:
 
 2. **Install dependencies:**
    ```bash
-   pip install -r requirements_cloud.txt
+   pip install -r requirements.txt
    ```
 
 3. **Run the application:**
@@ -60,7 +60,7 @@ This application is deployed on Streamlit Cloud for easy access without local in
 ### Deployment Configuration
 - **Main App**: `streamlit_app.py`
 - **Config**: `.streamlit/config.toml`
-- **Dependencies**: `requirements_cloud.txt`
+- **Dependencies**: `requirements.txt`
 
 ## 📖 Usage Guide
 

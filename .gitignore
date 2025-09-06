@@ -118,3 +118,28 @@ temp/
 *.pdf
 Input_Files_for_tests/
 billgen_performance.log
+
+# Prevent redundant files
+*.bak
+*.backup
+*.old
+*.copy
+*_copy*
+*_backup*
+*_old*
+*~
+.DS_Store
+Thumbs.db
+
+# Duplicate documentation files
+*/MAIN*INSTRUCTION*
+*/OVERALL_VIEW*
+*/bug*removal*prompt*
+attached_assets/README*
+attached_assets/*.md
+attached_assets/*.txt
+
+# Redundant requirements files
+requirements_cloud.txt
+requirements_duplicate*.txt
+requirements_backup*.txt
