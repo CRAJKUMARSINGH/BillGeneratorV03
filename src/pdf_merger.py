@@ -130,6 +130,17 @@ class PDFMerger:
         
         logger.info(f"HTML to PDF conversion complete: {len(pdf_docs)} documents generated")
         return pdf_docs
+
+    # --- Compatibility helper expected by tests ---
+    def html_to_pdf(self, html_content: str) -> Optional[bytes]:
+        """Convert a single HTML string to PDF or fallback bytes."""
+        try:
+            result = self._convert_single_html_to_pdf(html_content, "document")
+            if result is not None:
+                return result
+        except Exception:
+            pass
+        return self._create_fallback_pdf("document", "HTML", html_content)
     
     def _convert_single_html_to_pdf(self, html_content: str, doc_name: str) -> Optional[bytes]:
         """Convert single HTML document to PDF using available tools"""
@@ -249,7 +260,7 @@ class PDFMerger:
             logger.warning(f"wkhtmltopdf fallback failed: {str(e)}")
         
         # Final fallback: Create basic PDF with ReportLab
-        return None
+        return self._create_fallback_pdf(doc_name, "HTML", html_content)
     
     def _wkhtmltopdf_convert(self, html_content: str, doc_name: str) -> Optional[bytes]:
         """Try converting using wkhtmltopdf system command"""

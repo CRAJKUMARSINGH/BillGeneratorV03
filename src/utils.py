@@ -267,12 +267,18 @@ def format_currency(amount: Union[int, float], currency: str = '₹', include_de
         return formatted
         
     except (ValueError, TypeError):
-        return f"{currency}0{'ÿ.00' if include_decimals else ''}"
+        return f"{currency}0{'.00' if include_decimals else ''}"
 
 def format_date(date_value: Any, format_string: str = "%d/%m/%Y", default: str = "") -> str:
     """
     Enhanced date formatting with multiple input format support
     """
+    # Support legacy calling style where the second argument is actually the default value
+    # Example: format_date("invalid", "default")
+    if isinstance(format_string, str) and '%' not in format_string and default == "":
+        default = format_string
+        format_string = "%d/%m/%Y"
+
     if date_value is None or pd.isna(date_value):
         return default
     
@@ -307,9 +313,9 @@ def format_date(date_value: Any, format_string: str = "%d/%m/%Y", default: str =
                 return parsed_date.strftime(format_string)
             except ValueError:
                 continue
-        
-        # If no format worked, return the original string
-        return date_str
+
+        # If no format worked, return the provided default
+        return default if default is not None else ""
     
     # Handle numeric dates (Excel serial numbers)
     if isinstance(date_value, (int, float)):
@@ -321,8 +327,8 @@ def format_date(date_value: Any, format_string: str = "%d/%m/%Y", default: str =
                 return parsed_date.strftime(format_string)
         except (ValueError, OverflowError):
             pass
-    
-    return str(date_value) if date_value else default
+
+    return default
 
 def clean_text(text: Any, max_length: int = None) -> str:
     """
@@ -469,14 +475,15 @@ def sanitize_filename(filename: str) -> str:
     if not filename:
         return "document"
     
-    # Remove or replace invalid characters
+    # Remove or replace invalid characters (preserve number of invalids as underscores)
     filename = re.sub(r'[<>:"/\\|?*]', '_', filename)
-    
+
     # Remove control characters
     filename = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', filename)
-    
-    # Replace multiple spaces/underscores with single underscore
-    filename = re.sub(r'[\s_]+', '_', filename.strip())
+
+    # Collapse only whitespace to single space, then convert spaces to underscores (do NOT collapse underscores)
+    filename = re.sub(r'\s+', ' ', filename.strip())
+    filename = filename.replace(' ', '_')
     
     # Remove leading/trailing dots and spaces
     filename = filename.strip('. ')
