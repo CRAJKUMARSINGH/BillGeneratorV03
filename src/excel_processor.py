@@ -23,6 +23,59 @@ class ExcelProcessor:
         self.validation_warnings = []
         self.data = {}  # For compatibility
         
+    # --- Compatibility wrappers expected by tests ---
+    def load_excel_file(self, uploaded_file) -> bool:
+        """Load Excel from an uploaded-like object (with getvalue())."""
+        try:
+            from io import BytesIO
+            if uploaded_file is None:
+                return False
+            # Reset pointer if available
+            try:
+                uploaded_file.seek(0)
+            except Exception:
+                pass
+            file_bytes = uploaded_file.getvalue() if hasattr(uploaded_file, 'getvalue') else uploaded_file.read()
+            self.excel_file = BytesIO(file_bytes)
+            ok = self.load_workbook()
+            # Populate compatibility field `data` minimally
+            try:
+                self.data = {name: True for name in self.workbook.sheetnames}
+            except Exception:
+                self.data = {}
+            return ok
+        except Exception:
+            return False
+
+    def detect_sheets(self):
+        """Return detected sheet categories mapping used in processing."""
+        try:
+            if not self.workbook:
+                self.load_workbook()
+            validation = self.validate_sheets()
+            return validation.get('sheet_mapping', {})
+        except Exception:
+            return {}
+
+    def process_data(self):
+        """Compatibility method to process all sheets and return data."""
+        result = self.process_all_sheets()
+        # Tests expect keys like 'title_data', 'work_order_data', etc.
+        mapped = {}
+        if result is None:
+            return None
+        # Copy through original keys
+        mapped.update(result)
+        if 'title' in result:
+            mapped['title_data'] = result['title']
+        if 'work_order' in result:
+            mapped['work_order_data'] = result['work_order']
+        if 'bill_quantity' in result:
+            mapped['bill_quantity_data'] = result['bill_quantity']
+        if 'extra_items' in result:
+            mapped['extra_items_data'] = result['extra_items']
+        return mapped
+
     def load_workbook(self) -> bool:
         """Load Excel workbook and detect file pattern"""
         try:
@@ -159,6 +212,14 @@ class ExcelProcessor:
             
             # Calculate totals and financial summary
             processed_data['totals'] = self.calculate_financial_totals(processed_data)
+            # Add lightweight summary for compatibility with tests
+            processed_data['summary'] = {
+                'title_fields': len(processed_data.get('title', {}) or {}),
+                'work_items': len(processed_data.get('work_order', []) or []),
+                'bill_items': len(processed_data.get('bill_quantity', []) or []),
+                'extra_items': len(processed_data.get('extra_items', []) or []),
+                'has_totals': bool(processed_data.get('totals'))
+            }
             
             logger.info(f"Successfully processed {len(processed_data)} data categories")
             return processed_data

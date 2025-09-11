@@ -5,6 +5,7 @@ Implements comprehensive caching, memory optimization, and performance enhanceme
 
 import streamlit as st
 import functools
+import uuid
 import hashlib
 import pickle
 import time
@@ -142,10 +143,12 @@ class PerformanceOptimizer:
     def cached_file_operation(self, operation_name: str, ttl_hours: int = 1):
         """Decorator for caching file operations"""
         def decorator(func):
+            instance_token = uuid.uuid4().hex  # ensure unique cache namespace per wrapper instance
             @functools.wraps(func)
             def wrapper(*args, **kwargs):
                 # Create cache key
-                cache_key = f"{operation_name}_{self.create_cache_key(*args, **kwargs)}"
+                func_id = f"{func.__module__}.{getattr(func, '__qualname__', func.__name__)}"
+                cache_key = f"{operation_name}:{instance_token}:{func_id}:{self.create_cache_key(*args, **kwargs)}"
                 
                 # Check if result is cached
                 try:
