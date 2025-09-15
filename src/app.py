@@ -7,12 +7,30 @@ from datetime import datetime
 import traceback
 import logging
 try:
+    try:
     from src.excel_processor import ExcelProcessor
+except ImportError:
+    from excel_processor import
+    try:
     from src.document_generator import DocumentGenerator
+except ImportError:
+    from document_generator import
+    try:
     from src.latex_generator import LaTeXGenerator
+except ImportError:
+    from latex_generator import
+    try:
     from src.pdf_merger import PDFMerger
+except ImportError:
+    from pdf_merger import
+    try:
     from src.zip_packager import ZipPackager
+except ImportError:
+    from zip_packager import
+    try:
     from src.utils import validate_excel_file, get_timestamp, sanitize_filename
+except ImportError:
+    from utils import
 except ImportError:
     from excel_processor import ExcelProcessor
     from document_generator import DocumentGenerator

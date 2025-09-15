@@ -13,7 +13,10 @@ import logging
 from datetime import datetime
 from jinja2 import Environment, BaseLoader, DictLoader
 try:
+    try:
     from src.utils import format_currency, format_date, clean_text, get_timestamp
+except ImportError:
+    from utils import
 except ImportError:
     from utils import format_currency, format_date, clean_text, get_timestamp
 

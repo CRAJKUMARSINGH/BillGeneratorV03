@@ -5,7 +5,10 @@ import logging
 from datetime import datetime, date
 import numpy as np
 try:
+    try:
     from src.utils import safe_float_conversion, format_currency, round_to_nearest, clean_text
+except ImportError:
+    from utils import
 except ImportError:
     from utils import safe_float_conversion, format_currency, round_to_nearest, clean_text
 

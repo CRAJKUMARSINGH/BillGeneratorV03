@@ -17,11 +17,26 @@ sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 try:
+    try:
     from src.excel_processor import ExcelProcessor
+except ImportError:
+    from excel_processor import
+    try:
     from src.utils import safe_float_conversion, clean_text, format_currency, validate_excel_file
+except ImportError:
+    from utils import
+    try:
     from src.config import config
+except ImportError:
+    from config import
+    try:
     from src.latex_generator import LaTeXGenerator
+except ImportError:
+    from latex_generator import
+    try:
     from src.pdf_merger import PDFMerger
+except ImportError:
+    from pdf_merger import
 except ImportError as e:
     print(f"Import error: {e}")
     # Fallback imports for testing environment
@@ -378,14 +393,20 @@ class TestConfiguration:
     
     def test_config_initialization(self):
         """Test configuration initialization"""
-        from src.config import config
+        try:
+    from src.config import config
+except ImportError:
+    from config import
         assert config is not None
         assert hasattr(config, 'APP_NAME')
         assert hasattr(config, 'APP_VERSION')
     
     def test_directory_setup(self):
         """Test directory setup"""
-        from src.config import config
+        try:
+    from src.config import config
+except ImportError:
+    from config import
         assert 'base' in config.DIRS
         assert 'src' in config.DIRS
         assert 'templates' in config.DIRS
@@ -393,7 +414,10 @@ class TestConfiguration:
     
     def test_config_validation(self):
         """Test configuration validation"""
-        from src.config import config
+        try:
+    from src.config import config
+except ImportError:
+    from config import
         validation = config.validate_environment()
         assert 'valid' in validation
         assert 'warnings' in validation
@@ -401,7 +425,10 @@ class TestConfiguration:
     
     def test_config_updates(self):
         """Test configuration updates"""
-        from src.config import config
+        try:
+    from src.config import config
+except ImportError:
+    from config import
         
         # Test updating a configuration value
         original_value = config.MAX_FILE_SIZE_MB
