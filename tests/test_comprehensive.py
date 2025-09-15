@@ -14,21 +14,28 @@ import sys
 
 # Add src directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 try:
     from src.excel_processor import ExcelProcessor
-    from src.utils import *
+    from src.utils import safe_float_conversion, clean_text, format_currency, validate_excel_file
     from src.config import config
     from src.latex_generator import LaTeXGenerator
     from src.pdf_merger import PDFMerger
 except ImportError as e:
     print(f"Import error: {e}")
     # Fallback imports for testing environment
-    import excel_processor
-    import utils
-    import config
-    import latex_generator
-    import pdf_merger
+    try:
+        import sys
+        import os
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
+        from excel_processor import ExcelProcessor
+        from utils import safe_float_conversion, clean_text, format_currency, validate_excel_file
+        from config import config
+        from latex_generator import LaTeXGenerator
+        from pdf_merger import PDFMerger
+    except ImportError:
+        print("Could not import modules. Please check project structure.")
 
 class TestUtils:
     """Test utility functions"""
