@@ -1,0 +1,14 @@
+{
+  "filename": "simulated_file_023.xlsx",
+  "sheets_processed": [
+    "Title",
+    "Work Order",
+    "Bill Quantity",
+    "Extra Items"
+  ],
+  "work_order_items": 12,
+  "bill_quantity_items": 24,
+  "extra_items": 5,
+  "processing_timestamp": "2025-10-14T08:27:59.772311",
+  "validation_status": "passed"
+}

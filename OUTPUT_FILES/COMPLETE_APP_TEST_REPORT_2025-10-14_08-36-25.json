@@ -1,0 +1,63 @@
+{
+  "test_suite_info": {
+    "start_time": "2025-10-14T08:36:22.577310",
+    "end_time": "2025-10-14T08:36:25.661519",
+    "total_duration": 3.084209,
+    "total_tests": 2,
+    "successful_tests": 2,
+    "failed_tests": 0,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "test_name": "Excel File Upload Mode",
+      "test_type": "upload",
+      "status": "success",
+      "duration": 0.021663,
+      "output_files_count": 42,
+      "processed_data_summary": {
+        "files_processed": 25,
+        "successful_files": 25
+      }
+    },
+    {
+      "test_name": "Online Mode",
+      "test_type": "online",
+      "status": "success",
+      "duration": 0.05752,
+      "output_files_count": 3,
+      "processed_data_summary": {
+        "items_selected": 94,
+        "extra_items_added": 7
+      }
+    }
+  ],
+  "comparison_report": {
+    "report_generated": "2025-10-14T08:36:25.670491",
+    "upload_mode_summary": {
+      "status": "success",
+      "duration_seconds": 0.021663,
+      "files_processed": 25,
+      "successful_files": 25,
+      "total_sheets": 100
+    },
+    "online_mode_summary": {
+      "status": "success",
+      "duration_seconds": 0.05752,
+      "items_selected": 94,
+      "selection_percentage": 67,
+      "extra_items_added": 7,
+      "total_amount": 31400970.69
+    },
+    "comparison_metrics": {
+      "faster_mode": "upload",
+      "upload_mode_files": 42,
+      "online_mode_files": 3
+    }
+  },
+  "recommendations": [
+    "✅ All tests passed successfully! System is working optimally.",
+    "📈 Both Excel Upload Mode and Online Mode are functioning correctly.",
+    "📁 Output files are properly organized in date-time stamped directories."
+  ]
+}

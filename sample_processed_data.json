@@ -1,0 +1,70 @@
+{
+  "title": {
+    "project_name": "Sample Infrastructure Project",
+    "contractor_name": "Sample Contractor Ltd",
+    "work_order_no": "WO-2025-001",
+    "location": "Sample Location",
+    "agreement_no": "AG-2025-001"
+  },
+  "work_order": [
+    {
+      "serial_no": "1",
+      "description": "Earthwork Excavation",
+      "unit": "Cum",
+      "quantity": 100.0,
+      "rate": 500.0,
+      "amount": 50000.0,
+      "remark": "As per specifications"
+    },
+    {
+      "serial_no": "2",
+      "description": "Concrete Work M20",
+      "unit": "Cum",
+      "quantity": 50.0,
+      "rate": 2500.0,
+      "amount": 125000.0,
+      "remark": "RCC work"
+    }
+  ],
+  "bill_quantity": [
+    {
+      "serial_no": "1",
+      "description": "Earthwork Excavation",
+      "unit": "Cum",
+      "quantity": 95.0,
+      "rate": 500.0,
+      "amount": 47500.0,
+      "remark": "Executed quantity"
+    },
+    {
+      "serial_no": "2",
+      "description": "Concrete Work M20",
+      "unit": "Cum",
+      "quantity": 52.0,
+      "rate": 2500.0,
+      "amount": 130000.0,
+      "remark": "Executed quantity"
+    }
+  ],
+  "extra_items": [
+    {
+      "serial_no": "1",
+      "description": "Additional Concrete Work",
+      "unit": "Cum",
+      "quantity": 5.0,
+      "rate": 2600.0,
+      "amount": 13000.0,
+      "approval_ref": "APR-2025-001",
+      "remark": "Extra work approved"
+    }
+  ],
+  "totals": {
+    "bill_quantity_total": 177500.0,
+    "extra_items_total": 13000.0,
+    "grand_total": 190500.0,
+    "gst_rate": 18.0,
+    "gst_amount": 34290.0,
+    "total_with_gst": 224790.0,
+    "net_payable": 224790.0
+  }
+}

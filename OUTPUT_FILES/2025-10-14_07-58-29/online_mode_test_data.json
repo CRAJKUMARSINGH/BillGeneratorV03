@@ -1,0 +1,11 @@
+{
+  "test_type": "online_mode",
+  "items_selected": 75,
+  "extra_items_added": 7,
+  "processing_timestamp": "2025-10-14T07:58:29.156624",
+  "test_summary": {
+    "items_selected_percentage": "75%",
+    "extra_items_count": 7,
+    "data_entry_method": "manual_online"
+  }
+}

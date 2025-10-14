@@ -1,0 +1,11 @@
+{
+  "test_type": "excel_upload_mode",
+  "files_processed": 25,
+  "processing_timestamp": "2025-10-14T07:58:27.155144",
+  "test_summary": {
+    "total_files": 25,
+    "successful_files": 25,
+    "failed_files": 0,
+    "success_rate": 100.0
+  }
+}

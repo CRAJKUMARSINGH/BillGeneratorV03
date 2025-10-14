@@ -1,0 +1,50 @@
+{
+  "test_suite_info": {
+    "start_time": "2025-10-14T07:58:27.154564",
+    "end_time": "2025-10-14T07:58:29.157379",
+    "total_duration": 2.002815,
+    "total_tests": 2,
+    "successful_tests": 2,
+    "failed_tests": 0,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "test_name": "Excel File Upload Mode",
+      "test_type": "upload",
+      "status": "success",
+      "duration": 0.000844,
+      "output_files": [
+        "OUTPUT_FILES\\2025-10-14_07-58-27\\excel_upload_test_data.json"
+      ]
+    },
+    {
+      "test_name": "Online Mode",
+      "test_type": "online",
+      "status": "success",
+      "duration": 0.00119,
+      "output_files": [
+        "OUTPUT_FILES\\2025-10-14_07-58-29\\online_mode_test_data.json"
+      ]
+    }
+  ],
+  "comparison_report": {
+    "report_generated": "2025-10-14T07:58:29.159535",
+    "upload_mode_summary": {
+      "status": "success",
+      "duration": 0.000844,
+      "files_processed": 25
+    },
+    "online_mode_summary": {
+      "status": "success",
+      "duration": 0.00119,
+      "items_selected": 75,
+      "extra_items": 7
+    },
+    "comparison_metrics": {
+      "faster_mode": "upload",
+      "upload_mode_files": 1,
+      "online_mode_files": 1
+    }
+  }
+}

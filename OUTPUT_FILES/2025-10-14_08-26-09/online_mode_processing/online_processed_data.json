@@ -1,0 +1,734 @@
+{
+  "title": {
+    "project_name": "Online Mode Test Project",
+    "contractor_name": "Online Test Contractor Ltd",
+    "work_order_no": "ONLINE-WO-20251014",
+    "location": "Online Test Location",
+    "test_mode": "Online Data Entry Simulation"
+  },
+  "work_order": [
+    {
+      "serial_no": "1",
+      "description": "Work Item 1 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 219.99,
+      "rate": 2798.34,
+      "amount": 615606.82
+    },
+    {
+      "serial_no": "2",
+      "description": "Work Item 2 - Online Entry",
+      "unit": "Item",
+      "quantity": 171.33,
+      "rate": 2135.03,
+      "amount": 365794.69
+    },
+    {
+      "serial_no": "3",
+      "description": "Work Item 3 - Online Entry",
+      "unit": "Cum",
+      "quantity": 215.22,
+      "rate": 2094.24,
+      "amount": 450722.33
+    },
+    {
+      "serial_no": "4",
+      "description": "Work Item 4 - Online Entry",
+      "unit": "Item",
+      "quantity": 256.12,
+      "rate": 2592.08,
+      "amount": 663883.53
+    },
+    {
+      "serial_no": "5",
+      "description": "Work Item 5 - Online Entry",
+      "unit": "Cum",
+      "quantity": 83.5,
+      "rate": 1980.58,
+      "amount": 165378.43
+    },
+    {
+      "serial_no": "6",
+      "description": "Work Item 6 - Online Entry",
+      "unit": "Item",
+      "quantity": 275.96,
+      "rate": 2379.46,
+      "amount": 656635.78
+    },
+    {
+      "serial_no": "7",
+      "description": "Work Item 7 - Online Entry",
+      "unit": "Item",
+      "quantity": 297.07,
+      "rate": 2793.28,
+      "amount": 829799.69
+    },
+    {
+      "serial_no": "8",
+      "description": "Work Item 8 - Online Entry",
+      "unit": "Item",
+      "quantity": 173.05,
+      "rate": 1069.86,
+      "amount": 185139.27
+    },
+    {
+      "serial_no": "9",
+      "description": "Work Item 9 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 185.96,
+      "rate": 2884.37,
+      "amount": 536377.45
+    },
+    {
+      "serial_no": "10",
+      "description": "Work Item 10 - Online Entry",
+      "unit": "Cum",
+      "quantity": 56.63,
+      "rate": 949.56,
+      "amount": 53773.58
+    },
+    {
+      "serial_no": "11",
+      "description": "Work Item 11 - Online Entry",
+      "unit": "Cum",
+      "quantity": 66.16,
+      "rate": 1116.62,
+      "amount": 73875.58
+    },
+    {
+      "serial_no": "12",
+      "description": "Work Item 12 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 271.36,
+      "rate": 1474.01,
+      "amount": 399987.35
+    },
+    {
+      "serial_no": "13",
+      "description": "Work Item 13 - Online Entry",
+      "unit": "Cum",
+      "quantity": 299.36,
+      "rate": 2750.53,
+      "amount": 823398.66
+    },
+    {
+      "serial_no": "14",
+      "description": "Work Item 14 - Online Entry",
+      "unit": "Item",
+      "quantity": 224.39,
+      "rate": 2778.81,
+      "amount": 623537.18
+    },
+    {
+      "serial_no": "15",
+      "description": "Work Item 15 - Online Entry",
+      "unit": "Cum",
+      "quantity": 121.77,
+      "rate": 2330.67,
+      "amount": 283805.69
+    },
+    {
+      "serial_no": "16",
+      "description": "Work Item 16 - Online Entry",
+      "unit": "Item",
+      "quantity": 195.21,
+      "rate": 1702.81,
+      "amount": 332405.54
+    },
+    {
+      "serial_no": "17",
+      "description": "Work Item 17 - Online Entry",
+      "unit": "Cum",
+      "quantity": 225.98,
+      "rate": 1012.26,
+      "amount": 228750.51
+    },
+    {
+      "serial_no": "18",
+      "description": "Work Item 18 - Online Entry",
+      "unit": "Cum",
+      "quantity": 277.1,
+      "rate": 2990.79,
+      "amount": 828747.91
+    },
+    {
+      "serial_no": "19",
+      "description": "Work Item 19 - Online Entry",
+      "unit": "Cum",
+      "quantity": 148.14,
+      "rate": 2368.02,
+      "amount": 350798.48
+    },
+    {
+      "serial_no": "20",
+      "description": "Work Item 20 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 163.41,
+      "rate": 1575.27,
+      "amount": 257414.87
+    },
+    {
+      "serial_no": "21",
+      "description": "Work Item 21 - Online Entry",
+      "unit": "Item",
+      "quantity": 290.93,
+      "rate": 1502.47,
+      "amount": 437113.6
+    },
+    {
+      "serial_no": "22",
+      "description": "Work Item 22 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 268.77,
+      "rate": 855.82,
+      "amount": 230018.74
+    },
+    {
+      "serial_no": "23",
+      "description": "Work Item 23 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 72.22,
+      "rate": 1406.78,
+      "amount": 101597.65
+    },
+    {
+      "serial_no": "24",
+      "description": "Work Item 24 - Online Entry",
+      "unit": "Cum",
+      "quantity": 214.79,
+      "rate": 2487.53,
+      "amount": 534296.57
+    },
+    {
+      "serial_no": "25",
+      "description": "Work Item 25 - Online Entry",
+      "unit": "Item",
+      "quantity": 138.47,
+      "rate": 2124.38,
+      "amount": 294162.9
+    },
+    {
+      "serial_no": "26",
+      "description": "Work Item 26 - Online Entry",
+      "unit": "Item",
+      "quantity": 260.0,
+      "rate": 1245.39,
+      "amount": 323801.4
+    },
+    {
+      "serial_no": "27",
+      "description": "Work Item 27 - Online Entry",
+      "unit": "Cum",
+      "quantity": 130.71,
+      "rate": 2443.87,
+      "amount": 319438.25
+    },
+    {
+      "serial_no": "28",
+      "description": "Work Item 28 - Online Entry",
+      "unit": "Item",
+      "quantity": 51.71,
+      "rate": 2448.17,
+      "amount": 126594.87
+    },
+    {
+      "serial_no": "29",
+      "description": "Work Item 29 - Online Entry",
+      "unit": "Item",
+      "quantity": 57.66,
+      "rate": 2369.18,
+      "amount": 136606.92
+    },
+    {
+      "serial_no": "30",
+      "description": "Work Item 30 - Online Entry",
+      "unit": "Cum",
+      "quantity": 240.61,
+      "rate": 1378.07,
+      "amount": 331577.42
+    },
+    {
+      "serial_no": "31",
+      "description": "Work Item 31 - Online Entry",
+      "unit": "Cum",
+      "quantity": 170.04,
+      "rate": 1311.04,
+      "amount": 222929.24
+    },
+    {
+      "serial_no": "32",
+      "description": "Work Item 32 - Online Entry",
+      "unit": "Cum",
+      "quantity": 186.46,
+      "rate": 912.26,
+      "amount": 170100.0
+    },
+    {
+      "serial_no": "33",
+      "description": "Work Item 33 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 293.8,
+      "rate": 1552.27,
+      "amount": 456056.93
+    },
+    {
+      "serial_no": "34",
+      "description": "Work Item 34 - Online Entry",
+      "unit": "Item",
+      "quantity": 217.31,
+      "rate": 2591.09,
+      "amount": 563069.77
+    },
+    {
+      "serial_no": "35",
+      "description": "Work Item 35 - Online Entry",
+      "unit": "Item",
+      "quantity": 236.91,
+      "rate": 853.42,
+      "amount": 202183.73
+    },
+    {
+      "serial_no": "36",
+      "description": "Work Item 36 - Online Entry",
+      "unit": "Cum",
+      "quantity": 73.24,
+      "rate": 2126.42,
+      "amount": 155739.0
+    },
+    {
+      "serial_no": "37",
+      "description": "Work Item 37 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 163.57,
+      "rate": 1378.47,
+      "amount": 225476.34
+    },
+    {
+      "serial_no": "38",
+      "description": "Work Item 38 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 57.43,
+      "rate": 2816.66,
+      "amount": 161760.78
+    },
+    {
+      "serial_no": "39",
+      "description": "Work Item 39 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 232.44,
+      "rate": 2665.94,
+      "amount": 619671.09
+    },
+    {
+      "serial_no": "40",
+      "description": "Work Item 40 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 145.32,
+      "rate": 1470.38,
+      "amount": 213675.62
+    },
+    {
+      "serial_no": "41",
+      "description": "Work Item 41 - Online Entry",
+      "unit": "Cum",
+      "quantity": 183.41,
+      "rate": 1921.26,
+      "amount": 352378.3
+    }
+  ],
+  "bill_quantity": [
+    {
+      "serial_no": "1",
+      "description": "Bill Item 1 - Online Entry",
+      "unit": "Item",
+      "quantity": 239.15,
+      "rate": 1800.18,
+      "amount": 430513.05
+    },
+    {
+      "serial_no": "2",
+      "description": "Bill Item 2 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 257.32,
+      "rate": 1068.32,
+      "amount": 274900.1
+    },
+    {
+      "serial_no": "3",
+      "description": "Bill Item 3 - Online Entry",
+      "unit": "Cum",
+      "quantity": 238.36,
+      "rate": 2773.67,
+      "amount": 661131.98
+    },
+    {
+      "serial_no": "4",
+      "description": "Bill Item 4 - Online Entry",
+      "unit": "Cum",
+      "quantity": 210.17,
+      "rate": 1032.12,
+      "amount": 216920.66
+    },
+    {
+      "serial_no": "5",
+      "description": "Bill Item 5 - Online Entry",
+      "unit": "Item",
+      "quantity": 143.98,
+      "rate": 1553.7,
+      "amount": 223701.73
+    },
+    {
+      "serial_no": "6",
+      "description": "Bill Item 6 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 189.44,
+      "rate": 1936.57,
+      "amount": 366863.82
+    },
+    {
+      "serial_no": "7",
+      "description": "Bill Item 7 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 110.31,
+      "rate": 1769.86,
+      "amount": 195233.26
+    },
+    {
+      "serial_no": "8",
+      "description": "Bill Item 8 - Online Entry",
+      "unit": "Cum",
+      "quantity": 95.11,
+      "rate": 803.64,
+      "amount": 76434.2
+    },
+    {
+      "serial_no": "9",
+      "description": "Bill Item 9 - Online Entry",
+      "unit": "Cum",
+      "quantity": 274.47,
+      "rate": 2904.44,
+      "amount": 797181.65
+    },
+    {
+      "serial_no": "10",
+      "description": "Bill Item 10 - Online Entry",
+      "unit": "Item",
+      "quantity": 155.77,
+      "rate": 2481.09,
+      "amount": 386479.39
+    },
+    {
+      "serial_no": "11",
+      "description": "Bill Item 11 - Online Entry",
+      "unit": "Item",
+      "quantity": 268.14,
+      "rate": 2503.53,
+      "amount": 671296.53
+    },
+    {
+      "serial_no": "12",
+      "description": "Bill Item 12 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 206.99,
+      "rate": 1263.01,
+      "amount": 261430.44
+    },
+    {
+      "serial_no": "13",
+      "description": "Bill Item 13 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 51.03,
+      "rate": 1793.54,
+      "amount": 91524.35
+    },
+    {
+      "serial_no": "14",
+      "description": "Bill Item 14 - Online Entry",
+      "unit": "Item",
+      "quantity": 170.63,
+      "rate": 1645.7,
+      "amount": 280805.79
+    },
+    {
+      "serial_no": "15",
+      "description": "Bill Item 15 - Online Entry",
+      "unit": "Item",
+      "quantity": 113.0,
+      "rate": 1699.14,
+      "amount": 192002.82
+    },
+    {
+      "serial_no": "16",
+      "description": "Bill Item 16 - Online Entry",
+      "unit": "Cum",
+      "quantity": 185.3,
+      "rate": 1492.62,
+      "amount": 276582.49
+    },
+    {
+      "serial_no": "17",
+      "description": "Bill Item 17 - Online Entry",
+      "unit": "Cum",
+      "quantity": 57.06,
+      "rate": 2983.22,
+      "amount": 170222.53
+    },
+    {
+      "serial_no": "18",
+      "description": "Bill Item 18 - Online Entry",
+      "unit": "Cum",
+      "quantity": 54.63,
+      "rate": 1879.86,
+      "amount": 102696.75
+    },
+    {
+      "serial_no": "19",
+      "description": "Bill Item 19 - Online Entry",
+      "unit": "Item",
+      "quantity": 266.72,
+      "rate": 1666.36,
+      "amount": 444451.54
+    },
+    {
+      "serial_no": "20",
+      "description": "Bill Item 20 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 177.05,
+      "rate": 812.54,
+      "amount": 143860.21
+    },
+    {
+      "serial_no": "21",
+      "description": "Bill Item 21 - Online Entry",
+      "unit": "Item",
+      "quantity": 73.89,
+      "rate": 1017.65,
+      "amount": 75194.16
+    },
+    {
+      "serial_no": "22",
+      "description": "Bill Item 22 - Online Entry",
+      "unit": "Cum",
+      "quantity": 78.48,
+      "rate": 1436.61,
+      "amount": 112745.15
+    },
+    {
+      "serial_no": "23",
+      "description": "Bill Item 23 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 160.72,
+      "rate": 2956.97,
+      "amount": 475244.22
+    },
+    {
+      "serial_no": "24",
+      "description": "Bill Item 24 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 129.28,
+      "rate": 2558.42,
+      "amount": 330752.54
+    },
+    {
+      "serial_no": "25",
+      "description": "Bill Item 25 - Online Entry",
+      "unit": "Item",
+      "quantity": 251.03,
+      "rate": 2322.87,
+      "amount": 583110.06
+    },
+    {
+      "serial_no": "26",
+      "description": "Bill Item 26 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 137.5,
+      "rate": 1710.13,
+      "amount": 235142.88
+    },
+    {
+      "serial_no": "27",
+      "description": "Bill Item 27 - Online Entry",
+      "unit": "Item",
+      "quantity": 234.46,
+      "rate": 2353.92,
+      "amount": 551900.08
+    },
+    {
+      "serial_no": "28",
+      "description": "Bill Item 28 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 143.79,
+      "rate": 1450.53,
+      "amount": 208571.71
+    },
+    {
+      "serial_no": "29",
+      "description": "Bill Item 29 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 78.1,
+      "rate": 1372.86,
+      "amount": 107220.37
+    },
+    {
+      "serial_no": "30",
+      "description": "Bill Item 30 - Online Entry",
+      "unit": "Item",
+      "quantity": 199.85,
+      "rate": 1386.36,
+      "amount": 277064.05
+    },
+    {
+      "serial_no": "31",
+      "description": "Bill Item 31 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 206.66,
+      "rate": 2686.61,
+      "amount": 555214.82
+    },
+    {
+      "serial_no": "32",
+      "description": "Bill Item 32 - Online Entry",
+      "unit": "Cum",
+      "quantity": 221.42,
+      "rate": 893.57,
+      "amount": 197854.27
+    },
+    {
+      "serial_no": "33",
+      "description": "Bill Item 33 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 234.27,
+      "rate": 960.73,
+      "amount": 225070.22
+    },
+    {
+      "serial_no": "34",
+      "description": "Bill Item 34 - Online Entry",
+      "unit": "Sq.m",
+      "quantity": 108.9,
+      "rate": 1590.06,
+      "amount": 173157.53
+    },
+    {
+      "serial_no": "35",
+      "description": "Bill Item 35 - Online Entry",
+      "unit": "Cum",
+      "quantity": 198.09,
+      "rate": 2014.8,
+      "amount": 399111.73
+    },
+    {
+      "serial_no": "36",
+      "description": "Bill Item 36 - Online Entry",
+      "unit": "Cum",
+      "quantity": 207.26,
+      "rate": 2908.52,
+      "amount": 602819.86
+    },
+    {
+      "serial_no": "37",
+      "description": "Bill Item 37 - Online Entry",
+      "unit": "Cum",
+      "quantity": 43.95,
+      "rate": 2805.73,
+      "amount": 123311.83
+    },
+    {
+      "serial_no": "38",
+      "description": "Bill Item 38 - Online Entry",
+      "unit": "Cum",
+      "quantity": 116.68,
+      "rate": 2696.59,
+      "amount": 314638.12
+    },
+    {
+      "serial_no": "39",
+      "description": "Bill Item 39 - Online Entry",
+      "unit": "Cum",
+      "quantity": 74.49,
+      "rate": 2184.83,
+      "amount": 162747.99
+    },
+    {
+      "serial_no": "40",
+      "description": "Bill Item 40 - Online Entry",
+      "unit": "Item",
+      "quantity": 175.28,
+      "rate": 1780.17,
+      "amount": 312028.2
+    },
+    {
+      "serial_no": "41",
+      "description": "Bill Item 41 - Online Entry",
+      "unit": "Cum",
+      "quantity": 148.09,
+      "rate": 1512.15,
+      "amount": 223934.29
+    }
+  ],
+  "extra_items": [
+    {
+      "serial_no": "EX01",
+      "description": "Extra Item 1 - Added Online",
+      "unit": "Sq.m",
+      "quantity": 21.33,
+      "rate": 739.02,
+      "amount": 15763.3,
+      "remark": "Added via Online Mode Entry"
+    },
+    {
+      "serial_no": "EX02",
+      "description": "Extra Item 2 - Added Online",
+      "unit": "Cum",
+      "quantity": 5.9,
+      "rate": 2590.2,
+      "amount": 15282.18,
+      "remark": "Added via Online Mode Entry"
+    },
+    {
+      "serial_no": "EX03",
+      "description": "Extra Item 3 - Added Online",
+      "unit": "Nos",
+      "quantity": 85.72,
+      "rate": 805.31,
+      "amount": 69031.17,
+      "remark": "Added via Online Mode Entry"
+    },
+    {
+      "serial_no": "EX04",
+      "description": "Extra Item 4 - Added Online",
+      "unit": "Item",
+      "quantity": 64.19,
+      "rate": 2845.36,
+      "amount": 182643.66,
+      "remark": "Added via Online Mode Entry"
+    },
+    {
+      "serial_no": "EX05",
+      "description": "Extra Item 5 - Added Online",
+      "unit": "Meter",
+      "quantity": 26.7,
+      "rate": 3457.62,
+      "amount": 92318.45,
+      "remark": "Added via Online Mode Entry"
+    },
+    {
+      "serial_no": "EX06",
+      "description": "Extra Item 6 - Added Online",
+      "unit": "Sq.m",
+      "quantity": 83.37,
+      "rate": 628.78,
+      "amount": 52421.39,
+      "remark": "Added via Online Mode Entry"
+    }
+  ],
+  "totals": {
+    "bill_quantity_total": 12511067.37,
+    "extra_items_total": 427460.15,
+    "grand_total": 12938527.52,
+    "gst_rate": 18.0,
+    "gst_amount": 2328934.95,
+    "total_with_gst": 15267462.47,
+    "net_payable": 15267462.47
+  }
+}

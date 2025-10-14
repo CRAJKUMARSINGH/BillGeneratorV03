@@ -1,0 +1,14 @@
+{
+  "selected_work_order_items": 69,
+  "added_extra_items": 1,
+  "financial_summary": {
+    "bill_quantity_total": 20851182.72,
+    "extra_items_total": 273436.86,
+    "grand_total": 21124619.58,
+    "gst_rate": 18.0,
+    "gst_amount": 3802431.52,
+    "total_with_gst": 24927051.1,
+    "net_payable": 24927051.1
+  },
+  "selection_percentage": "74%"
+}

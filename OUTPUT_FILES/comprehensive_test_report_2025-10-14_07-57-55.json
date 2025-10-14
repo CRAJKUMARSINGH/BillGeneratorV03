@@ -1,0 +1,126 @@
+{
+  "test_suite_info": {
+    "start_time": "2025-10-14T07:57:48.552643",
+    "end_time": "2025-10-14T07:57:55.241906",
+    "total_duration": 6.689263,
+    "total_tests": 2,
+    "successful_tests": 2,
+    "failed_tests": 0,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "test_name": "Excel File Upload Mode",
+      "test_type": "upload",
+      "start_time": "2025-10-14T07:57:48.552710",
+      "end_time": "2025-10-14T07:57:53.107100",
+      "duration": 4.55439,
+      "status": "success",
+      "error_message": null,
+      "warnings": [],
+      "validation_summary": {
+        "total_files_processed": 10,
+        "success_rate": 100.0,
+        "files_with_warnings": 0
+      },
+      "output_files_count": 20,
+      "processed_data_summary": {
+        "grand_total": 0
+      }
+    },
+    {
+      "test_name": "Online Mode",
+      "test_type": "online",
+      "start_time": "2025-10-14T07:57:55.154067",
+      "end_time": "2025-10-14T07:57:55.241478",
+      "duration": 0.087411,
+      "status": "success",
+      "error_message": null,
+      "warnings": [],
+      "validation_summary": {
+        "mode": "online",
+        "items_selected": 22,
+        "extra_items_added": 2,
+        "total_amount": 674700.47,
+        "processing_timestamp": "2025-10-14T07:57:55.239790"
+      },
+      "output_files_count": 2,
+      "processed_data_summary": {
+        "project_name": "Electric Repair and MTC work at Govt. Ambedkar hostel Ambamata, Govardhanvilas, Udaipur",
+        "contractor_name": "M/s Seema Electrical Udaipur",
+        "bill_items_count": 22,
+        "bill_total": 525478.62,
+        "extra_items_count": 2,
+        "extra_total": 149221.85,
+        "grand_total": 674700.47
+      }
+    }
+  ],
+  "comparison_report": {
+    "report_generated": "2025-10-14T07:57:55.244476",
+    "upload_mode_summary": {
+      "test_name": "Excel File Upload Mode",
+      "test_type": "upload",
+      "start_time": "2025-10-14T07:57:48.552710",
+      "end_time": "2025-10-14T07:57:53.107100",
+      "duration": 4.55439,
+      "status": "success",
+      "error_message": null,
+      "warnings": [],
+      "validation_summary": {
+        "total_files_processed": 10,
+        "success_rate": 100.0,
+        "files_with_warnings": 0
+      },
+      "output_files_count": 20,
+      "processed_data_summary": {
+        "grand_total": 0
+      }
+    },
+    "online_mode_summary": {
+      "test_name": "Online Mode",
+      "test_type": "online",
+      "start_time": "2025-10-14T07:57:55.154067",
+      "end_time": "2025-10-14T07:57:55.241478",
+      "duration": 0.087411,
+      "status": "success",
+      "error_message": null,
+      "warnings": [],
+      "validation_summary": {
+        "mode": "online",
+        "items_selected": 22,
+        "extra_items_added": 2,
+        "total_amount": 674700.47,
+        "processing_timestamp": "2025-10-14T07:57:55.239790"
+      },
+      "output_files_count": 2,
+      "processed_data_summary": {
+        "project_name": "Electric Repair and MTC work at Govt. Ambedkar hostel Ambamata, Govardhanvilas, Udaipur",
+        "contractor_name": "M/s Seema Electrical Udaipur",
+        "bill_items_count": 22,
+        "bill_total": 525478.62,
+        "extra_items_count": 2,
+        "extra_total": 149221.85,
+        "grand_total": 674700.47
+      }
+    },
+    "comparison_metrics": {
+      "processing_time": {
+        "upload_mode_seconds": 4.55439,
+        "online_mode_seconds": 0.087411,
+        "faster_mode": "online"
+      },
+      "success_status": {
+        "upload_mode_success": true,
+        "online_mode_success": true
+      },
+      "output_files": {
+        "upload_mode_files": 20,
+        "online_mode_files": 2
+      }
+    }
+  },
+  "recommendations": [
+    "✅ All tests passed successfully! System is working optimally."
+  ]
+}
